@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACHADINHOS VIRAL — Os achados mais desejados da Shopee & Amazon em um só lugar</title>
+<meta name="description" content="One-page vitrine com produtos virais por categoria. Link afiliado Shopee, Amazon e Magalu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FCFCF9;
+  --fg:#0F0F0F;
+  --muted:#6B6B6B;
+  --border:#E8E6E1;
+  --card:#FFFFFF;
+  --gold:#C2A26A;
+  --gold-strong:#A8894F;
+  --gold-soft:#F5EFE2;
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%}
+
+/* NAVBAR STICKY - NUNCA SOME */
+.navbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(252,252,249,0.92);
+  backdrop-filter:blur(12px) saturate(1.2);
+  -webkit-backdrop-filter:blur(12px) saturate(1.2);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1180px; margin:0 auto;
+  padding:14px 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.logo{
+  display:flex; align-items:center; gap:10px;
+  font-weight:700; letter-spacing:-0.04em; font-size:18px;
+}
+.logo-mark{
+  width:28px; height:28px; border-radius:8px;
+  background:var(--fg); color:var(--bg);
+  display:grid; place-items:center;
+  font-family:'Instrument Serif',serif; font-size:14px;
+}
+.logo span{font-weight:400; color:var(--muted); font-size:13px; letter-spacing:0.08em; text-transform:uppercase}
+.nav-links{display:flex; gap:18px; align-items:center; font-size:13px; color:var(--muted)}
+.nav-links a:hover{color:var(--fg)}
+.nav-cta{
+  background:var(--fg); color:#fff; padding:9px 16px; border-radius:999px;
+  font-size:13px; font-weight:600; letter-spacing:0.02em;
+  border:1px solid var(--fg); transition:.2s;
+}
+.nav-cta:hover{background:transparent; color:var(--fg)}
+@media(max-width:760px){ .nav-links{display:none} }
+
+/* HERO - EDITORIAL P&B -> GOLD */
+.hero{
+  max-width:1180px; margin:0 auto; padding:36px 20px 18px;
+  display:grid; grid-template-columns:1.25fr 0.85fr; gap:28px; align-items:center;
+}
+@media(max-width:860px){ .hero{grid-template-columns:1fr; padding-top:22px} }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);
+  border:1px solid var(--border); padding:6px 10px; border-radius:999px; background:#fff;
+}
+.eyebrow i{width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1} 50%{opacity:0.45}}
+.hero h1{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(32px,5vw,52px); line-height:0.95; letter-spacing:-0.04em; margin:14px 0 12px;
+  font-weight:400;
+}
+.hero h1 em{font-style:italic; color:var(--gold-strong); font-weight:400}
+.hero p{color:var(--muted); font-size:15px; line-height:1.6; max-width:48ch}
+.hero-actions{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap}
+.btn-primary{
+  background:var(--fg); color:#fff; padding:12px 18px; border-radius:999px;
+  font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--fg); transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+.btn-ghost{
+  background:#fff; color:var(--fg); padding:12px 18px; border-radius:999px;
+  font-size:14px; font-weight:500; border:1px solid var(--border);
+}
+.hero-card{
+  background:var(--card); border:1px solid var(--border); border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,0.06);
+}
+.hero-card img{aspect-ratio:4/3; object-fit:cover}
+.hero-card-footer{padding:14px 16px; display:flex; justify-content:space-between; align-items:center; gap:12px}
+.hero-card-footer strong{font-size:13px}
+.hero-card-footer span{font-size:11px; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase}
+.hero-stats{display:flex; gap:18px; margin-top:16px; padding-top:16px; border-top:1px solid var(--border); flex-wrap:wrap}
+.hero-stats b{font-size:18px; letter-spacing:-0.03em}
+.hero-stats span{font-size:11px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; display:block}
+
+/* FILTER BAR - STICKY ABAIXO DA NAVBAR */
+.filter-bar{
+  position:sticky; top:58px; z-index:40;
+  background:rgba(252,252,249,0.96); backdrop-filter:blur(10px);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+}
+.filter-inner{
+  max-width:1180px; margin:0 auto; padding:12px 20px;
+  display:flex; gap:8px; overflow-x:auto; scrollbar-width:none;
+}
+.filter-inner::-webkit-scrollbar{display:none}
+.chip{
+  white-space:nowrap; padding:8px 14px; border-radius:999px;
+  font-size:13px; font-weight:500; cursor:pointer; user-select:none;
+  border:1px solid var(--border); background:#fff; color:var(--muted);
+  transition:.18s;
+}
+.chip.active{background:var(--fg); color:#fff; border-color:var(--fg)}
+.chip:hover{border-color:var(--fg); color:var(--fg)}
+.chip.active:hover{color:#fff}
+.chip-count{font-size:11px; opacity:0.6; margin-left:4px}
+
+/* GRID */
+.main{max-width:1180px; margin:0 auto; padding:18px 20px 40px}
+.grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px;
+}
+@media(max-width:960px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:560px){ .grid{grid-template-columns:1fr} }
+
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:18px; overflow:hidden;
+  display:flex; flex-direction:column; transition:.22s;
+  position:relative;
+}
+.card:hover{transform:translateY(-2px); border-color:var(--gold); box-shadow:0 12px 32px rgba(194,162,106,0.14)}
+.card-media{position:relative; background:#F6F5F2; aspect-ratio:1/1; overflow:hidden}
+.card-media img{width:100%; height:100%; object-fit:cover; transition:.35s}
+.card:hover .card-media img{transform:scale(1.04)}
+.badge{
+  position:absolute; top:10px; left:10px;
+  font-size:10px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700;
+  padding:6px 8px; border-radius:999px; background:var(--fg); color:#fff;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.badge.gold{background:var(--gold); color:#fff}
+.badge.light{background:#fff; color:var(--fg); border:1px solid var(--border)}
+.store{
+  position:absolute; top:10px; right:10px;
+  font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+  background:#fff; border:1px solid var(--border); padding:5px 8px; border-radius:999px;
+}
+.card-body{padding:14px 14px 12px; flex:1; display:flex; flex-direction:column; gap:8px}
+.card-title{font-size:14px; line-height:1.35; font-weight:600; letter-spacing:-0.02em; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:38px}
+.card-meta{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted)}
+.stars{color:#111; letter-spacing:0.04em}
+.divider{height:1px; background:var(--border); margin:4px 0}
+.price-row{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-top:auto}
+.price{font-size:16px; font-weight:700; letter-spacing:-0.03em}
+.price small{font-size:11px; color:var(--muted); font-weight:400; margin-left:6px}
+.btn-card{
+  width:100%; margin-top:10px; padding:11px 12px; border-radius:999px;
+  background:var(--fg); color:#fff; border:1px solid var(--fg);
+  font-size:13px; font-weight:600; text-align:center;
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  transition:.18s;
+}
+.btn-card:hover{background:#fff; color:var(--fg)}
+.btn-card.gold{background:var(--gold); border-color:var(--gold); color:#fff}
+.btn-card.gold:hover{background:var(--gold-strong); border-color:var(--gold-strong)}
+
+/* EMPTY */
+.empty{
+  grid-column:1/-1; text-align:center; padding:40px 20px;
+  border:1px dashed var(--border); border-radius:18px; background:#fff; color:var(--muted);
+}
+
+/* FOOTER */
+.footer{
+  border-top:1px solid var(--border); background:#fff; margin-top:10px;
+}
+.footer-inner{max-width:1180px; margin:0 auto; padding:22px 20px; display:grid; gap:10px}
+.footer p{font-size:11px; line-height:1.6; color:var(--muted)}
+.footer strong{color:var(--fg); font-size:12px}
+
+/* REVEAL */
+.reveal{opacity:0; transform:translateY(10px); transition:.5s}
+.reveal.in{opacity:1; transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR FIXA SEMPRE VISÍVEL -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <span class="logo-mark">A</span>
+      ACHADINHOS VIRAL <span>· Brasil</span>
+    </a>
+    <div class="nav-links">
+      <a href="#produtos">Produtos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#aviso">Aviso afiliado</a>
+    </div>
+    <a class="nav-cta" href="#produtos">Ver ofertas →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero reveal">
+  <div>
+    <span class="eyebrow"><i></i> Atualizado hoje · Curadoria TikTok + Shopee/Amazon</span>
+    <h1>Achadinhos que <em>viralizaram</em><br>e valem cada centavo.</h1>
+    <p>Uma única página, organizada por categorias. Sem enrolação: foto real, preço em R$ e link direto pra loja oficial. Você clica em <b>Ver oferta</b> e compra na Shopee/Amazon — a gente ganha uma comissão e você não paga nada a mais.</p>
+    <div class="hero-actions">
+      <a href="#produtos" class="btn-primary">Ver produtos por categoria →</a>
+      <a href="#como-funciona" class="btn-ghost">Como funciona?</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>200+</b><span>produtos testados</span></div>
+      <div><b>6</b><span>categorias</span></div>
+      <div><b>PIX</b><span>pagamento na loja</span></div>
+      <div><b style="color:var(--gold-strong)">4.8★</b><span>avaliação média</span></div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&auto=format&fit=crop" alt="Casa organizada">
+    <div class="hero-card-footer">
+      <div>
+        <strong>Destaque de hoje</strong><br>
+        <span>Mais salvo no TikTok esta semana</span>
+      </div>
+      <span style="background:var(--gold-soft); color:var(--gold-strong); padding:6px 10px; border-radius:999px; font-weight:700; font-size:11px; border:1px solid #EDE3C8">🔥 VIRAL</span>
+    </div>
+  </div>
+</section>
+
+<!-- BARRA DE FILTROS STICKY -->
+<div class="filter-bar" id="produtos">
+  <div class="filter-inner" id="filterBar">
+    <!-- chips injetados via JS -->
+  </div>
+</div>
+
+<!-- GRID -->
+<main class="main">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:22px; letter-spacing:-0.03em">Produtos por categoria</h2>
+    <span id="resultCount" style="font-size:12px; color:var(--muted); border:1px solid var(--border); background:#fff; padding:6px 10px; border-radius:999px">Carregando…</span>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <section id="como-funciona" style="margin-top:28px; background:#fff; border:1px solid var(--border); border-radius:22px; padding:20px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px">
+    <div><b style="font-size:13px">1. Escolha a categoria</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Clique em Casa, Tech, Beleza… a vitrine filtra na hora, sem recarregar.</p></div>
+    <div><b style="font-size:13px">2. Clique em Ver oferta</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Você vai direto pra Shopee/Amazon/Magalu na página oficial do produto.</p></div>
+    <div><b style="font-size:13px">3. Compre com segurança</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Pagamento, frete e entrega são 100% da loja. Recebemos comissão, sem custo extra pra você.</p></div>
+  </section>
+</main>
+
+<footer class="footer" id="aviso">
+  <div class="footer-inner">
+    <strong>Aviso de afiliado &nbsp;·&nbsp; Transparência total</strong>
+    <p>Somos afiliados da Shopee, Amazon Brasil, Mercado Livre e parceiros da Awin/Lomadee (Magalu, Casas Bahia, etc.). Quando você clica em “Ver oferta” e compra, podemos receber uma pequena comissão. Isso <b>não aumenta o preço</b> pra você. Preços e estoque podem variar após a publicação. Imagens meramente ilustrativas.</p>
+    <p>© 2026 Achadinhos Viral · Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script>
+// ===== PRODUTOS - EDITE SÓ AQUI OU NO produtos.json =====
+// Depois você pode mover esse array para um arquivo externo produtos.json e fazer fetch()
+const PRODUTOS = [
+  { id:"01", categoria:"casa", titulo:"Mini Processador Elétrico 3 Lâminas - Viral TikTok", preco:"R$ 39,90", precoAntigo:"R$ 59,90", loja:"Shopee", selo:"🔥 VIRAL", rating:"4.9 (8.4k)", img:"https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-AFILIADO-01" },
+  { id:"02", categoria:"casa", titulo:"Organizador de Pia Expansível Inox", preco:"R$ 47,90", loja:"Amazon", selo:"MAIS VENDIDO", rating:"4.8 (12k)", img:"https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-02" },
+  { id:"03", categoria:"tech", titulo:"Fone Bluetooth TWS com Case Power Bank", preco:"R$ 59,90", loja:"Shopee", selo:"-32% OFF", rating:"4.8 (21k)", img:"https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-03" },
+  { id:"04", categoria:"tech", titulo:"Suporte Celular Articulado para Gravação", preco:"R$ 29,90", loja:"Amazon", selo:"⭐ 4.9", rating:"4.9 (6.1k)", img:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-04" },
+  { id:"05", categoria:"beleza", titulo:"Escova Secadora 3 em 1 - Modela e Alisa", preco:"R$ 89,90", loja:"Magalu", selo:"🔥 VIRAL", rating:"4.7 (9.3k)", img:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop", link:"https://divulgador.magalu.com/SEU-LINK-05" },
+  { id:"06", categoria:"beleza", titulo:"Kit Organizador de Maquiagem Acrílico", preco:"R$ 34,90", loja:"Shopee", selo:"NOVO", rating:"4.8 (4.2k)", img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-06" },
+  { id:"07", categoria:"pets", titulo:"Escova Removedora de Pelos - Luva 5 Dedos", preco:"R$ 19,90", loja:"Shopee", selo:"MAIS VENDIDO", rating:"4.9 (15k)", img:"https://images.unsplash.com/photo-1558788353-6fc6f73e27a1?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-07" },
+  { id:"08", categoria:"pets", titulo:"Bebedouro Fonte para Gatos - Água Corrente", preco:"R$ 79,90", loja:"Amazon", selo:"⭐ 4.8", rating:"4.8 (3.7k)", img:"https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-08" },
+  { id:"09", categoria:"auto", titulo:"Aspirador de Pó Portátil para Carro - USB", preco:"R$ 69,90", loja:"Shopee", selo:"-28% OFF", rating:"4.7 (5.5k)", img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-09" },
+  { id:"10", categoria:"auto", titulo:"Suporte Celular Veicular Magnético", preco:"R$ 22,90", loja:"Magalu", selo:"NOVO", rating:"4.8 (2.9k)", img:"https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80&auto=format&fit=crop", link:"https://divulgador.magalu.com/SEU-LINK-10" },
+  { id:"11", categoria:"fitness", titulo:"Kit Faixas Elásticas + Ancoragem Porta", preco:"R$ 44,90", loja:"Amazon", selo:"MAIS VENDIDO", rating:"4.8 (7.8k)", img:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-11" },
+  { id:"12", categoria:"fitness", titulo:"Garrafa Térmica Inox 1L com Infusor", preco:"R$ 36,90", loja:"Shopee", selo:"🔥 VIRAL", rating:"4.9 (11k)", img:"https://images.unsplash.com/photo-1523369364227-24934b335841?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-12" },
+];
+
+const CATEGORIAS = [
+  { id:"todos", label:"Todos" },
+  { id:"casa", label:"Casa e Cozinha" },
+  { id:"tech", label:"Tecnologia" },
+  { id:"beleza", label:"Beleza" },
+  { id:"pets", label:"Pets" },
+  { id:"auto", label:"Automotivo" },
+  { id:"fitness", label:"Fitness" },
+];
+
+let filtroAtual = "todos";
+
+function renderChips(){
+  const bar = document.getElementById('filterBar');
+  bar.innerHTML = CATEGORIAS.map(c=>{
+    const count = c.id==="todos" ? PRODUTOS.length : PRODUTOS.filter(p=>p.categoria===c.id).length;
+    return `<button class="chip ${filtroAtual===c.id?'active':''}" data-cat="${c.id}">${c.label} <span class="chip-count">${count}</span></button>`
+  }).join('');
+  bar.querySelectorAll('.chip').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      filtroAtual = el.dataset.cat;
+      renderChips();
+      renderGrid();
+      document.getElementById('grid').scrollIntoView({behavior:'smooth', block:'start'});
+    })
+  })
+}
+
+function renderGrid(){
+  const grid = document.getElementById('grid');
+  const lista = filtroAtual==="todos" ? PRODUTOS : PRODUTOS.filter(p=>p.categoria===filtroAtual);
+  document.getElementById('resultCount').textContent = `${lista.length} produtos · ${filtroAtual==="todos" ? "todas as categorias" : CATEGORIAS.find(c=>c.id===filtroAtual).label}`;
+
+  if(lista.length===0){
+    grid.innerHTML = `<div class="empty">Nenhum produto nessa categoria ainda. Adicione no <code>produtos.json</code> e dê <code>git push</code>.</div>`;
+    return;
+  }
+
+  grid.innerHTML = lista.map(p=>`
+    <article class="card" data-cat="${p.categoria}">
+      <a href="${p.link}" target="_blank" rel="nofollow sponsored noopener" class="card-media">
+        <img src="${p.img}" alt="${p.titulo}" loading="lazy">
+        <span class="badge ${p.selo.includes('VIRAL')?'gold':''}">${p.selo}</span>
+        <span class="store">${p.loja}</span>
+      </a>
+      <div class="card-body">
+        <h3 class="card-title">${p.titulo}</h3>
+        <div class="card-meta"><span class="stars">★ ${p.rating}</span> · <span>${p.loja}</span></div>
+        <div class="divider"></div>
+        <div class="price-row">
+          <span class="price">${p.preco} ${p.precoAntigo ? `<small style="text-decoration:line-through">${p.precoAntigo}</small>`:''}</span>
+          <span style="font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">frete na loja</span>
+        </div>
+        <a href="${p.link}" target="_blank" rel="nofollow sponsored noopener" class="btn-card">Ver oferta na ${p.loja} →</a>
+      </div>
+    </article>
+  `).join('');
+}
+
+// reveal
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') })
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+renderChips();
+renderGrid();
+
+// Tenta carregar produtos.json externo se existir (sobrescreve o array acima)
+fetch('./produtos.json').then(r=>r.ok?r.json():null).then(data=>{
+  if(Array.isArray(data) && data.length){
+    PRODUTOS.length=0; data.forEach(p=>PRODUTOS.push(p));
+    renderChips(); renderGrid();
+  }
+}).catch(()=>{});
+</script>
+</body>
+</html>

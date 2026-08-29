@@ -1,0 +1,135 @@
+[
+  {
+    "id": "01",
+    "categoria": "casa",
+    "titulo": "Mini Processador Elétrico 3 Lâminas - Viral TikTok",
+    "preco": "R$ 39,90",
+    "precoAntigo": "R$ 59,90",
+    "loja": "Shopee",
+    "selo": "🔥 VIRAL",
+    "rating": "4.9 (8.4k)",
+    "img": "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&q=80&auto=format&fit=crop",
+    "link": "https://shopee.com.br/SEU-LINK-AFILIADO-01"
+  },
+  {
+    "id": "02",
+    "categoria": "casa",
+    "titulo": "Organizador de Pia Expansível Inox",
+    "preco": "R$ 47,90",
+    "loja": "Amazon",
+    "selo": "MAIS VENDIDO",
+    "rating": "4.8 (12k)",
+    "img": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80&auto=format&fit=crop",
+    "link": "https://amzn.to/SEU-LINK-02"
+  },
+  {
+    "id": "03",
+    "categoria": "tech",
+    "titulo": "Fone Bluetooth TWS com Case Power Bank",
+    "preco": "R$ 59,90",
+    "loja": "Shopee",
+    "selo": "-32% OFF",
+    "rating": "4.8 (21k)",
+    "img": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&q=80&auto=format&fit=crop",
+    "link": "https://shopee.com.br/SEU-LINK-03"
+  },
+  {
+    "id": "04",
+    "categoria": "tech",
+    "titulo": "Suporte Celular Articulado para Gravação",
+    "preco": "R$ 29,90",
+    "loja": "Amazon",
+    "selo": "⭐ 4.9",
+    "rating": "4.9 (6.1k)",
+    "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80&auto=format&fit=crop",
+    "link": "https://amzn.to/SEU-LINK-04"
+  },
+  {
+    "id": "05",
+    "categoria": "beleza",
+    "titulo": "Escova Secadora 3 em 1 - Modela e Alisa",
+    "preco": "R$ 89,90",
+    "loja": "Magalu",
+    "selo": "🔥 VIRAL",
+    "rating": "4.7 (9.3k)",
+    "img": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop",
+    "link": "https://divulgador.magalu.com/SEU-LINK-05"
+  },
+  {
+    "id": "06",
+    "categoria": "beleza",
+    "titulo": "Kit Organizador de Maquiagem Acrílico",
+    "preco": "R$ 34,90",
+    "loja": "Shopee",
+    "selo": "NOVO",
+    "rating": "4.8 (4.2k)",
+    "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80&auto=format&fit=crop",
+    "link": "https://shopee.com.br/SEU-LINK-06"
+  },
+  {
+    "id": "07",
+    "categoria": "pets",
+    "titulo": "Escova Removedora de Pelos - Luva 5 Dedos",
+    "preco": "R$ 19,90",
+    "loja": "Shopee",
+    "selo": "MAIS VENDIDO",
+    "rating": "4.9 (15k)",
+    "img": "https://images.unsplash.com/photo-1558788353-6fc6f73e27a1?w=600&q=80&auto=format&fit=crop",
+    "link": "https://shopee.com.br/SEU-LINK-07"
+  },
+  {
+    "id": "08",
+    "categoria": "pets",
+    "titulo": "Bebedouro Fonte para Gatos - Água Corrente",
+    "preco": "R$ 79,90",
+    "loja": "Amazon",
+    "selo": "⭐ 4.8",
+    "rating": "4.8 (3.7k)",
+    "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80&auto=format&fit=crop",
+    "link": "https://amzn.to/SEU-LINK-08"
+  },
+  {
+    "id": "09",
+    "categoria": "auto",
+    "titulo": "Aspirador de Pó Portátil para Carro - USB",
+    "preco": "R$ 69,90",
+    "loja": "Shopee",
+    "selo": "-28% OFF",
+    "rating": "4.7 (5.5k)",
+    "img": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80&auto=format&fit=crop",
+    "link": "https://shopee.com.br/SEU-LINK-09"
+  },
+  {
+    "id": "10",
+    "categoria": "auto",
+    "titulo": "Suporte Celular Veicular Magnético",
+    "preco": "R$ 22,90",
+    "loja": "Magalu",
+    "selo": "NOVO",
+    "rating": "4.8 (2.9k)",
+    "img": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80&auto=format&fit=crop",
+    "link": "https://divulgador.magalu.com/SEU-LINK-10"
+  },
+  {
+    "id": "11",
+    "categoria": "fitness",
+    "titulo": "Kit Faixas Elásticas + Ancoragem Porta",
+    "preco": "R$ 44,90",
+    "loja": "Amazon",
+    "selo": "MAIS VENDIDO",
+    "rating": "4.8 (7.8k)",
+    "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop",
+    "link": "https://amzn.to/SEU-LINK-11"
+  },
+  {
+    "id": "12",
+    "categoria": "fitness",
+    "titulo": "Garrafa Térmica Inox 1L com Infusor",
+    "preco": "R$ 36,90",
+    "loja": "Shopee",
+    "selo": "🔥 VIRAL",
+    "rating": "4.9 (11k)",
+    "img": "https://images.unsplash.com/photo-1523369364227-24934b335841?w=600&q=80&auto=format&fit=crop",
+    "link": "https://shopee.com.br/SEU-LINK-12"
+  }
+]
