@@ -131,6 +131,32 @@ img{display:block;width:100%}
 .chip.active:hover{color:#fff}
 .chip-count{font-size:11px; opacity:0.6; margin-left:4px}
 
+/* SEARCH BAR */
+.search-wrap{
+  max-width:1180px; margin:0 auto; padding:14px 20px 0;
+  position:relative;
+}
+.search-box{
+  position:relative; display:flex; align-items:center;
+  background:#fff; border:1px solid var(--border); border-radius:999px;
+  padding:0 14px; transition:.2s;
+}
+.search-box:focus-within{border-color:var(--gold); box-shadow:0 4px 20px rgba(194,162,106,0.14)}
+.search-box input{
+  flex:1; border:0; outline:0; background:transparent;
+  padding:13px 8px 13px 6px; font-size:14px; color:var(--fg);
+}
+.search-box input::placeholder{color:var(--muted); opacity:0.7}
+.search-icon{font-size:16px; color:var(--muted); margin-right:4px}
+.search-clear{
+  display:none; align-items:center; justify-content:center;
+  width:28px; height:28px; border-radius:50%; background:var(--fg); color:#fff;
+  font-size:12px; cursor:pointer; border:0; flex-shrink:0;
+}
+.search-clear.show{display:flex}
+.search-hint{font-size:11px; color:var(--muted); margin-top:8px; padding-left:4px; letter-spacing:0.02em}
+.search-hint b{color:var(--fg)}
+
 /* GRID */
 .main{max-width:1180px; margin:0 auto; padding:18px 20px 40px}
 .grid{
@@ -226,8 +252,8 @@ img{display:block;width:100%}
       <a href="#como-funciona" class="btn-ghost">Como funciona?</a>
     </div>
     <div class="hero-stats">
-      <div><b>200+</b><span>produtos testados</span></div>
-      <div><b>6</b><span>categorias</span></div>
+      <div><b>32</b><span>produtos reais</span></div>
+      <div><b>7</b><span>categorias</span></div>
       <div><b>PIX</b><span>pagamento na loja</span></div>
       <div><b style="color:var(--gold-strong)">4.8★</b><span>avaliação média</span></div>
     </div>
@@ -251,66 +277,80 @@ img{display:block;width:100%}
   </div>
 </div>
 
+<!-- BARRA DE BUSCA -->
+<div class="search-wrap">
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input id="searchInput" type="search" placeholder="Buscar por palavra-chave — ex: panela, fone, pet, jeans, mop..." autocomplete="off" spellcheck="false">
+    <button class="search-clear" id="clearSearch" aria-label="Limpar busca">✕</button>
+  </div>
+  <div class="search-hint" id="searchHint">Dica: digite <b>fone</b>, <b>cozinha</b>, <b>leg</b> ou nome da loja. Combina com a categoria selecionada.</div>
+</div>
+
 <!-- GRID -->
 <main class="main">
-  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:10px">
     <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:22px; letter-spacing:-0.03em">Produtos por categoria</h2>
     <span id="resultCount" style="font-size:12px; color:var(--muted); border:1px solid var(--border); background:#fff; padding:6px 10px; border-radius:999px">Carregando…</span>
   </div>
   <div class="grid" id="grid"></div>
 
   <section id="como-funciona" style="margin-top:28px; background:#fff; border:1px solid var(--border); border-radius:22px; padding:20px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px">
-    <div><b style="font-size:13px">1. Escolha a categoria</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Clique em Casa, Tech, Beleza… a vitrine filtra na hora, sem recarregar.</p></div>
-    <div><b style="font-size:13px">2. Clique em Ver oferta</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Você vai direto pra Shopee/Amazon/Magalu na página oficial do produto.</p></div>
+    <div><b style="font-size:13px">1. Escolha a categoria</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Clique em Casa, Tech, Moda… a vitrine filtra na hora, sem recarregar.</p></div>
+    <div><b style="font-size:13px">2. Clique em Ver oferta</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Você vai direto pra Shopee na página oficial do produto (link afiliado).</p></div>
     <div><b style="font-size:13px">3. Compre com segurança</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Pagamento, frete e entrega são 100% da loja oficial.</p></div>
   </section>
 </main>
-
 <footer class="footer" id="aviso">
   <div class="footer-inner">
     <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding-bottom:8px; border-bottom:1px solid var(--border); margin-bottom:8px">
       <img src="logo.png" alt="Garimpo" style="height:32px; width:auto; object-fit:contain" loading="lazy">
       <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted)">Produtos Virais Físicos · Seleção Garimpo</span>
     </div>
-    <p style="font-size:10px; line-height:1.6; color:var(--muted)">Aviso: Este site contém links de afiliados. Podemos receber comissão por compras realizadas através deles, sem custo adicional para você. Preços e estoque sujeitos a alteração na loja oficial. Imagens ilustrativas.</p>
+    <p style="font-size:10px; line-height:1.6; color:var(--muted)">Aviso: Este site contém links de afiliados. Podemos receber comissão por compras realizadas através deles, sem custo adicional para você. Preços e estoque sujeitos a alteração na loja oficial. Imagens ilustrativas — fotos reais serão atualizadas.</p>
     <p>© 2026 Garimpo — Produtos Virais Físicos · Todos os direitos reservados</p>
   </div>
 </footer>
 
 <script>
-// ===== PRODUTOS - EDITE SÓ AQUI OU NO produtos.json =====
-// Depois você pode mover esse array para um arquivo externo produtos.json e fazer fetch()
-const PRODUTOS = [
-  { id:"01", categoria:"casa", titulo:"Mini Processador Elétrico 3 Lâminas - Viral TikTok", preco:"R$ 39,90", precoAntigo:"R$ 59,90", loja:"Shopee", selo:"🔥 VIRAL", rating:"4.9 (8.4k)", img:"https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-AFILIADO-01" },
-  { id:"02", categoria:"casa", titulo:"Organizador de Pia Expansível Inox", preco:"R$ 47,90", loja:"Amazon", selo:"MAIS VENDIDO", rating:"4.8 (12k)", img:"https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-02" },
-  { id:"03", categoria:"tech", titulo:"Fone Bluetooth TWS com Case Power Bank", preco:"R$ 59,90", loja:"Shopee", selo:"-32% OFF", rating:"4.8 (21k)", img:"https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-03" },
-  { id:"04", categoria:"tech", titulo:"Suporte Celular Articulado para Gravação", preco:"R$ 29,90", loja:"Amazon", selo:"⭐ 4.9", rating:"4.9 (6.1k)", img:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-04" },
-  { id:"05", categoria:"beleza", titulo:"Escova Secadora 3 em 1 - Modela e Alisa", preco:"R$ 89,90", loja:"Magalu", selo:"🔥 VIRAL", rating:"4.7 (9.3k)", img:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop", link:"https://divulgador.magalu.com/SEU-LINK-05" },
-  { id:"06", categoria:"beleza", titulo:"Kit Organizador de Maquiagem Acrílico", preco:"R$ 34,90", loja:"Shopee", selo:"NOVO", rating:"4.8 (4.2k)", img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-06" },
-  { id:"07", categoria:"pets", titulo:"Escova Removedora de Pelos - Luva 5 Dedos", preco:"R$ 19,90", loja:"Shopee", selo:"MAIS VENDIDO", rating:"4.9 (15k)", img:"https://images.unsplash.com/photo-1558788353-6fc6f73e27a1?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-07" },
-  { id:"08", categoria:"pets", titulo:"Bebedouro Fonte para Gatos - Água Corrente", preco:"R$ 79,90", loja:"Amazon", selo:"⭐ 4.8", rating:"4.8 (3.7k)", img:"https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-08" },
-  { id:"09", categoria:"auto", titulo:"Aspirador de Pó Portátil para Carro - USB", preco:"R$ 69,90", loja:"Shopee", selo:"-28% OFF", rating:"4.7 (5.5k)", img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-09" },
-  { id:"10", categoria:"auto", titulo:"Suporte Celular Veicular Magnético", preco:"R$ 22,90", loja:"Magalu", selo:"NOVO", rating:"4.8 (2.9k)", img:"https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80&auto=format&fit=crop", link:"https://divulgador.magalu.com/SEU-LINK-10" },
-  { id:"11", categoria:"fitness", titulo:"Kit Faixas Elásticas + Ancoragem Porta", preco:"R$ 44,90", loja:"Amazon", selo:"MAIS VENDIDO", rating:"4.8 (7.8k)", img:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop", link:"https://amzn.to/SEU-LINK-11" },
-  { id:"12", categoria:"fitness", titulo:"Garrafa Térmica Inox 1L com Infusor", preco:"R$ 36,90", loja:"Shopee", selo:"🔥 VIRAL", rating:"4.9 (11k)", img:"https://images.unsplash.com/photo-1523369364227-24934b335841?w=600&q=80&auto=format&fit=crop", link:"https://shopee.com.br/SEU-LINK-12" },
-];
+// ===== PRODUTOS - carregado de produtos.json (fallback inline para preview local) =====
+let PRODUTOS = [];
 
 const CATEGORIAS = [
   { id:"todos", label:"Todos" },
   { id:"casa", label:"Casa e Cozinha" },
   { id:"tech", label:"Tecnologia" },
   { id:"beleza", label:"Beleza" },
+  { id:"moda", label:"Moda" },
   { id:"pets", label:"Pets" },
-  { id:"auto", label:"Automotivo" },
+  { id:"ferramentas", label:"Ferramentas" },
   { id:"fitness", label:"Fitness" },
 ];
 
 let filtroAtual = "todos";
+let buscaAtual = "";
+
+function normaliza(s){ return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""); }
+
+function getFiltrados(){
+  let lista = filtroAtual==="todos" ? [...PRODUTOS] : PRODUTOS.filter(p=>p.categoria===filtroAtual);
+  const q = normaliza(buscaAtual.trim());
+  if(q){
+    const termos = q.split(/\s+/).filter(Boolean);
+    lista = lista.filter(p=>{
+      const hay = normaliza([p.titulo, p.categoria, p.loja, p.selo, p.preco].join(" "));
+      return termos.every(t=> hay.includes(t));
+    });
+  }
+  return lista;
+}
 
 function renderChips(){
   const bar = document.getElementById('filterBar');
   bar.innerHTML = CATEGORIAS.map(c=>{
     const count = c.id==="todos" ? PRODUTOS.length : PRODUTOS.filter(p=>p.categoria===c.id).length;
+    // esconde categoria vazia exceto todos
+    if(count===0 && c.id!=="todos") return "";
     return `<button class="chip ${filtroAtual===c.id?'active':''}" data-cat="${c.id}">${c.label} <span class="chip-count">${count}</span></button>`
   }).join('');
   bar.querySelectorAll('.chip').forEach(el=>{
@@ -325,18 +365,35 @@ function renderChips(){
 
 function renderGrid(){
   const grid = document.getElementById('grid');
-  const lista = filtroAtual==="todos" ? PRODUTOS : PRODUTOS.filter(p=>p.categoria===filtroAtual);
-  document.getElementById('resultCount').textContent = `${lista.length} produtos · ${filtroAtual==="todos" ? "todas as categorias" : CATEGORIAS.find(c=>c.id===filtroAtual).label}`;
+  const lista = getFiltrados();
+  const totalCat = filtroAtual==="todos" ? PRODUTOS.length : PRODUTOS.filter(p=>p.categoria===filtroAtual).length;
+  const hint = buscaAtual.trim() ? ` · busca: "${buscaAtual.trim()}"` : "";
+  const labelCat = filtroAtual==="todos" ? "todas as categorias" : (CATEGORIAS.find(c=>c.id===filtroAtual)?.label || filtroAtual);
+  document.getElementById('resultCount').textContent = `${lista.length}/${totalCat} produtos · ${labelCat}${hint}`;
+
+  // atualiza dica de busca
+  const sh = document.getElementById('searchHint');
+  if(buscaAtual.trim()){
+    sh.innerHTML = lista.length ? `Mostrando <b>${lista.length}</b> resultado(s) para <b>"${buscaAtual.trim()}"</b> em <b>${labelCat}</b>. <a href="#" id="limparHint" style="color:var(--gold-strong);text-decoration:underline">Limpar</a>` : `Nenhum resultado para <b>"${buscaAtual.trim()}"</b> em <b>${labelCat}</b>.`;
+    const lh = document.getElementById('limparHint');
+    if(lh) lh.addEventListener('click', (e)=>{ e.preventDefault(); limparBusca(); });
+  } else {
+    sh.textContent = 'Dica: digite fone, panela, pet, jeans, mop... Combina com a categoria selecionada.';
+  }
+
+  const clearBtn = document.getElementById('clearSearch');
+  if(buscaAtual.trim()) clearBtn.classList.add('show'); else clearBtn.classList.remove('show');
 
   if(lista.length===0){
-    grid.innerHTML = `<div class="empty">Nenhum produto nessa categoria ainda. Adicione no <code>produtos.json</code> e dê <code>git push</code>.</div>`;
+    const msgBusca = buscaAtual.trim() ? `para "<b>${buscaAtual.trim()}</b>" em <b>${labelCat}</b>` : `nessa categoria`;
+    grid.innerHTML = `<div class="empty">Nenhum produto ${msgBusca}.<br>Tente outra palavra-chave ou mude a categoria.<br><button onclick="limparBusca()" style="margin-top:10px; padding:8px 14px; border-radius:999px; border:1px solid var(--border); background:#fff; cursor:pointer">Limpar busca</button></div>`;
     return;
   }
 
   grid.innerHTML = lista.map(p=>`
     <article class="card" data-cat="${p.categoria}">
       <a href="${p.link}" target="_blank" rel="nofollow sponsored noopener" class="card-media">
-        <img src="${p.img}" alt="${p.titulo}" loading="lazy">
+        <img src="${p.img}" alt="${p.titulo}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&auto=format&fit=crop'">
         <span class="badge ${p.selo.includes('VIRAL')?'gold':''}">${p.selo}</span>
         <span class="store">${p.loja}</span>
       </a>
@@ -354,22 +411,55 @@ function renderGrid(){
   `).join('');
 }
 
+function limparBusca(){
+  buscaAtual = "";
+  document.getElementById('searchInput').value = "";
+  document.getElementById('clearSearch').classList.remove('show');
+  renderGrid();
+}
+
 // reveal
 const io = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') })
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-renderChips();
-renderGrid();
+// search listeners
+const searchInput = document.getElementById('searchInput');
+const clearSearch = document.getElementById('clearSearch');
+let t=null;
+searchInput.addEventListener('input', (e)=>{
+  buscaAtual = e.target.value;
+  clearTimeout(t);
+  t=setTimeout(()=> renderGrid(), 180);
+});
+searchInput.addEventListener('keydown', (e)=>{
+  if(e.key==='Escape'){ limparBusca(); }
+});
+clearSearch.addEventListener('click', limparBusca);
 
-// Tenta carregar produtos.json externo se existir (sobrescreve o array acima)
+// tenta carregar produtos.json externo (fonte da verdade)
 fetch('./produtos.json').then(r=>r.ok?r.json():null).then(data=>{
   if(Array.isArray(data) && data.length){
-    PRODUTOS.length=0; data.forEach(p=>PRODUTOS.push(p));
+    PRODUTOS = data;
     renderChips(); renderGrid();
+  } else {
+    // fallback: se falhar, mantém vazio e mostra erro
+    document.getElementById('resultCount').textContent = 'Nenhum produto carregado';
   }
-}).catch(()=>{});
+}).catch(()=>{
+  document.getElementById('resultCount').textContent = 'Erro ao carregar produtos.json';
+});
+
+// fallback inline caso fetch falhe por file:// - injeta os 32 direto se PRODUTOS ainda vazio após 1s
+setTimeout(()=>{
+  if(PRODUTOS.length===0){
+    fetch('./produtos.json').then(r=>r.json()).then(d=>{ if(d.length){ PRODUTOS=d; renderChips(); renderGrid(); } }).catch(()=>{});
+  }
+}, 900);
+
+renderChips();
+renderGrid();
 </script>
 </body>
 </html>
