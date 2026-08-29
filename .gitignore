@@ -1,2 +1,12 @@
-*.jpeg
 WhatsApp*
+
+.vercel
+# permite fotos dos produtos
+!img/
+!img/**
+!img/*.jpeg
+!img/**/*.jpeg
+!img/*.jpg
+!img/**/*.jpg
+!img/*.webp
+!img/**/*.webp
