@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GARIMPO — Produtos Virais Físicos</title>
 <meta name="description" content="Garimpo: produtos virais físicos selecionados, preços incríveis e compra segura.">
-<link rel="icon" href="logo.jpg">
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<link rel="icon" type="image/png" href="logo-icon.png" sizes="512x512">
+<link rel="apple-touch-icon" href="apple-touch-icon.jpg" sizes="180x180">
+<meta name="theme-color" content="#FCFCF9">
+<meta property="og:image" content="logo-banner.jpg">
+<meta property="og:title" content="GARIMPO — Produtos Virais Físicos">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -48,7 +53,8 @@ img{display:block;width:100%}
   display:flex; align-items:center; gap:10px;
   font-weight:700; letter-spacing:-0.04em; font-size:18px;
 }
-.logo img{height:42px; width:auto; object-fit:contain; border-radius:6px}
+.logo img{height:44px; width:auto; object-fit:contain; display:block; background:transparent}
+@media(max-width:760px){ .logo img{height:38px} }
 .logo span{font-weight:400; color:var(--muted); font-size:12px; letter-spacing:0.08em; text-transform:uppercase}
 .nav-links{display:flex; gap:18px; align-items:center; font-size:13px; color:var(--muted)}
 .nav-links a:hover{color:var(--fg)}
@@ -198,8 +204,8 @@ img{display:block;width:100%}
 <!-- NAVBAR FIXA SEMPRE VISÍVEL -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a class="logo" href="#">
-      <img src="logo.jpg" alt="Garimpo">
+    <a class="logo" href="#" aria-label="Garimpo — início">
+      <img src="logo.png" alt="Garimpo — Produtos Virais Físicos" width="366" height="87" loading="eager" decoding="async">
     </a>
     <div class="nav-links">
       <a href="#produtos">Produtos</a>
@@ -262,6 +268,10 @@ img{display:block;width:100%}
 
 <footer class="footer" id="aviso">
   <div class="footer-inner">
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding-bottom:8px; border-bottom:1px solid var(--border); margin-bottom:8px">
+      <img src="logo.png" alt="Garimpo" style="height:32px; width:auto; object-fit:contain" loading="lazy">
+      <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted)">Produtos Virais Físicos · Seleção Garimpo</span>
+    </div>
     <p style="font-size:10px; line-height:1.6; color:var(--muted)">Aviso: Este site contém links de afiliados. Podemos receber comissão por compras realizadas através deles, sem custo adicional para você. Preços e estoque sujeitos a alteração na loja oficial. Imagens ilustrativas.</p>
     <p>© 2026 Garimpo — Produtos Virais Físicos · Todos os direitos reservados</p>
   </div>
