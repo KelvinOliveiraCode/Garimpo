@@ -252,20 +252,22 @@ img{display:block;width:100%}
       <a href="#como-funciona" class="btn-ghost">Como funciona?</a>
     </div>
     <div class="hero-stats">
-      <div><b>32</b><span>produtos reais</span></div>
-      <div><b>7</b><span>categorias</span></div>
+      <div><b id="heroCount">61</b><span>produtos reais</span></div>
+      <div><b id="heroCats">7</b><span>categorias</span></div>
       <div><b>PIX</b><span>pagamento na loja</span></div>
       <div><b style="color:var(--gold-strong)">4.8★</b><span>avaliação média</span></div>
     </div>
   </div>
-  <div class="hero-card">
-    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&auto=format&fit=crop" alt="Casa organizada">
+  <div class="hero-card" id="heroCard">
+    <a id="heroCardLink" href="https://s.shopee.com.br/W6FeO9KmT" target="_blank" rel="nofollow sponsored noopener" aria-label="Destaque do dia">
+      <img id="heroCardImg" src="img/42-2026-nova-serie-8-relogio-t800-ultra-smart-wa.jpeg" alt="2026 Nova Série 8 Relógio T800 Ultra Smart Watch Esportivo">
+    </a>
     <div class="hero-card-footer">
       <div>
-        <strong>Destaque de hoje</strong><br>
-        <span>Mais salvo no TikTok esta semana</span>
+        <strong id="heroCardTitle" style="display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; max-width:22ch">2026 Nova Série 8 Relógio T800 Ultra</strong><br>
+        <span id="heroCardSub">R$ 35,99 · 4.8 (100mil+) · MAIS VENDIDO</span>
       </div>
-      <span style="background:var(--gold-soft); color:var(--gold-strong); padding:6px 10px; border-radius:999px; font-weight:700; font-size:11px; border:1px solid #EDE3C8">🔥 VIRAL</span>
+      <span id="heroCardBadge" style="background:var(--gold-soft); color:var(--gold-strong); padding:6px 10px; border-radius:999px; font-weight:700; font-size:11px; border:1px solid #EDE3C8">🔥 VIRAL</span>
     </div>
   </div>
 </section>
@@ -439,10 +441,50 @@ searchInput.addEventListener('keydown', (e)=>{
 clearSearch.addEventListener('click', limparBusca);
 
 // tenta carregar produtos.json externo (fonte da verdade)
+function parseSalesNum(s){
+  if(!s) return 0;
+  const t = String(s).toLowerCase().replace(/\s/g,'');
+  if(t.includes('mil')){
+    const n = parseFloat(t.replace('mil+','').replace('mil','').replace(',','.'))||0;
+    return Math.round(n*1000);
+  }
+  const n = parseInt(t.replace(/\D/g,''),10);
+  return isNaN(n)?0:n;
+}
+function atualizarHero(){
+  const hc=document.getElementById('heroCount');
+  const hcats=document.getElementById('heroCats');
+  if(hc) hc.textContent = PRODUTOS.length;
+  if(hcats){
+    const cats = new Set(PRODUTOS.map(p=>p.categoria));
+    hcats.textContent = cats.size;
+  }
+  // destaque do dia: pega um 🔥 VIRAL com maior volume, senão MAIS VENDIDO, senão primeiro
+  if(!PRODUTOS.length) return;
+  let pool = PRODUTOS.filter(p=> String(p.selo||'').includes('VIRAL'));
+  if(!pool.length) pool = PRODUTOS.filter(p=> String(p.selo).includes('MAIS VENDIDO'));
+  if(!pool.length) pool = PRODUTOS;
+  // ordena por vendas decrescente (extrai de rating "4.8 (100mil+)" ou  "4.8 (1mil+)" )
+  pool.sort((a,b)=> parseSalesNum((a.rating.match(/\(([^)]+)\)/)||[])[1]||a.rating) - parseSalesNum((b.rating.match(/\(([^)]+)\)/)||[])[1]||b.rating));
+  pool.reverse();
+  // pega topo mas alterna por dia para variar (dia do mês % pool.length)
+  const idx = (new Date().getDate()) % pool.length;
+  const p = pool[idx] || pool[0];
+  const link=document.getElementById('heroCardLink');
+  const img=document.getElementById('heroCardImg');
+  const title=document.getElementById('heroCardTitle');
+  const sub=document.getElementById('heroCardSub');
+  const badge=document.getElementById('heroCardBadge');
+  if(link) link.href = p.link;
+  if(img){ img.src = p.img; img.alt = p.titulo; }
+  if(title) title.textContent = p.titulo.length>44 ? p.titulo.slice(0,44)+'…' : p.titulo;
+  if(sub) sub.textContent = `${p.preco} · ${p.rating} · ${p.selo.trim()}`;
+  if(badge){ badge.textContent = p.selo.trim(); badge.className = ''; badge.style.cssText = p.selo.includes('VIRAL') ? 'background:var(--gold); color:#fff; padding:6px 10px; border-radius:999px; font-weight:700; font-size:11px; border:1px solid var(--gold)' : 'background:var(--gold-soft); color:var(--gold-strong); padding:6px 10px; border-radius:999px; font-weight:700; font-size:11px; border:1px solid #EDE3C8'; }
+}
 fetch('./produtos.json').then(r=>r.ok?r.json():null).then(data=>{
   if(Array.isArray(data) && data.length){
     PRODUTOS = data;
-    renderChips(); renderGrid();
+    renderChips(); renderGrid(); atualizarHero();
   } else {
     // fallback: se falhar, mantém vazio e mostra erro
     document.getElementById('resultCount').textContent = 'Nenhum produto carregado';
@@ -454,12 +496,13 @@ fetch('./produtos.json').then(r=>r.ok?r.json():null).then(data=>{
 // fallback inline caso fetch falhe por file:// - injeta os 32 direto se PRODUTOS ainda vazio após 1s
 setTimeout(()=>{
   if(PRODUTOS.length===0){
-    fetch('./produtos.json').then(r=>r.json()).then(d=>{ if(d.length){ PRODUTOS=d; renderChips(); renderGrid(); } }).catch(()=>{});
+    fetch('./produtos.json').then(r=>r.json()).then(d=>{ if(d.length){ PRODUTOS=d; renderChips(); renderGrid(); atualizarHero(); } }).catch(()=>{});
   }
 }, 900);
 
 renderChips();
 renderGrid();
+atualizarHero();
 </script>
 </body>
 </html>
