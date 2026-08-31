@@ -1,6 +1,10 @@
 WhatsApp*
 
 .vercel
+videos/
+_report.json
+_natal_report.json
+_129.html
 # permite fotos dos produtos
 !img/
 !img/**
