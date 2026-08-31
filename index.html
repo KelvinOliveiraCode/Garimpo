@@ -3,14 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GARIMPO — Produtos Virais Físicos</title>
-<meta name="description" content="Garimpo: produtos virais físicos selecionados, preços incríveis e compra segura.">
+<title>GARIMPO — Produtos Virais da Shopee | Casa, Tech, Moda, Beleza e Natal</title>
+<meta name="description" content="Garimpo: 131 produtos virais físicos da Shopee com curadoria — Casa, Tecnologia, Moda, Beleza, Pets, Ferramentas, Fitness e Natal. Preços incríveis e compra segura na loja oficial.">
+<link rel="canonical" href="https://garimpo-oficial.vercel.app/">
 <link rel="icon" type="image/jpeg" href="favicon.jpg">
 <link rel="icon" type="image/png" href="logo-icon.png" sizes="512x512">
 <link rel="apple-touch-icon" href="apple-touch-icon.jpg" sizes="180x180">
 <meta name="theme-color" content="#FCFCF9">
-<meta property="og:image" content="logo-banner.jpg">
-<meta property="og:title" content="GARIMPO — Produtos Virais Físicos">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://garimpo-oficial.vercel.app/">
+<meta property="og:title" content="GARIMPO — Produtos Virais da Shopee | 131 achados com curadoria">
+<meta property="og:description" content="131 produtos virais físicos selecionados — Casa, Tech, Moda, Beleza e Natal. Clique em Ver oferta e compre direto na Shopee oficial.">
+<meta property="og:image" content="https://garimpo-oficial.vercel.app/logo-banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GARIMPO — Produtos Virais da Shopee">
+<meta name="twitter:description" content="131 achados virais com curadoria. Casa, Tech, Moda, Beleza e Natal — compra segura na Shopee.">
+<meta name="twitter:image" content="https://garimpo-oficial.vercel.app/logo-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -228,10 +238,41 @@ img{display:block;width:100%}
 .footer p{font-size:11px; line-height:1.6; color:var(--muted)}
 .footer strong{color:var(--fg); font-size:12px}
 
+
+/* ORDENACAO + TOOLBAR */
+.toolbar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:10px}
+.toolbar-left{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.toolbar h2{font-family:'Instrument Serif',serif; font-weight:400; font-size:22px; letter-spacing:-0.03em}
+.sort-wrap{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted)}
+.sort-wrap select{appearance:none; -webkit-appearance:none; background:#fff; border:1px solid var(--border); border-radius:999px; padding:8px 32px 8px 12px; font-size:12px; font-weight:500; color:var(--fg); cursor:pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='1.7'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 10px center}
+.sort-wrap select:focus{outline:none; border-color:var(--gold); box-shadow:0 2px 10px rgba(194,162,106,0.14)}
+.hl{background:var(--gold-soft); color:var(--gold-strong); padding:0 2px; border-radius:4px; font-weight:600}
+.load-more-wrap{display:flex; justify-content:center; margin-top:20px}
+.btn-load{padding:12px 22px; border-radius:999px; border:1px solid var(--fg); background:var(--fg); color:#fff; font-size:13px; font-weight:600; cursor:pointer; transition:.18s}
+.btn-load:hover{background:#fff; color:var(--fg); transform:translateY(-1px)}
+.btn-load:disabled{opacity:0.5; cursor:not-allowed; transform:none}
+#backToTop{position:fixed; right:18px; bottom:18px; z-index:45; width:42px; height:42px; border-radius:999px; border:1px solid var(--border); background:#fff; box-shadow:0 8px 24px rgba(0,0,0,0.08); display:none; align-items:center; justify-content:center; cursor:pointer; color:var(--fg); transition:.2s}
+#backToTop.show{display:flex}
+#backToTop:hover{border-color:var(--gold); color:var(--gold-strong); transform:translateY(-1px)}
+.filter-bar.scrolled{box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+.filter-inner::after{content:""; position:absolute; right:0; top:0; bottom:0; width:36px; background:linear-gradient(to right, transparent, rgba(252,252,249,0.96)); pointer-events:none; opacity:0; transition:.2s}
+.filter-bar.has-overflow .filter-inner::after{opacity:1}
+.card-media img{width:100%; height:100%; object-fit:cover; transition:.35s; aspect-ratio:1/1}
+
 /* REVEAL */
 .reveal{opacity:0; transform:translateY(10px); transition:.5s}
 .reveal.in{opacity:1; transform:none}
 </style>
+
+<!-- SEO: JSON-LD -->
+<script type="application/ld+json" id="ld-org">
+{"@context":"https://schema.org","@type":"Organization","name":"Garimpo","url":"https://garimpo-oficial.vercel.app/","logo":"https://garimpo-oficial.vercel.app/logo.png","sameAs":["https://www.instagram.com/garimpo0132/","https://www.tiktok.com/@garimpo0176","https://www.youtube.com/@Garimpoprodutos"]}
+</script>
+<script type="application/ld+json" id="ld-website">
+{"@context":"https://schema.org","@type":"WebSite","name":"Garimpo","url":"https://garimpo-oficial.vercel.app/","potentialAction":{"@type":"SearchAction","target":"https://garimpo-oficial.vercel.app/#produtos?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+<script type="application/ld+json" id="ld-itemlist">{"@context":"https://schema.org","@type":"ItemList","name":"Produtos Virais Garimpo","itemListElement":[]}</script>
+
 </head>
 <body>
 
@@ -310,11 +351,23 @@ img{display:block;width:100%}
 
 <!-- GRID -->
 <main class="main">
-  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:10px">
-    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:22px; letter-spacing:-0.03em">Produtos por categoria</h2>
-    <span id="resultCount" style="font-size:12px; color:var(--muted); border:1px solid var(--border); background:#fff; padding:6px 10px; border-radius:999px">Carregando…</span>
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <h2>Produtos por categoria</h2>
+      <span id="resultCount" style="font-size:12px; color:var(--muted); border:1px solid var(--border); background:#fff; padding:6px 10px; border-radius:999px" aria-live="polite" aria-atomic="true">Carregando…</span>
+    </div>
+    <label class="sort-wrap" for="sortSelect">Ordenar:
+      <select id="sortSelect" aria-label="Ordenar produtos">
+        <option value="relevancia">Relevância</option>
+        <option value="vendidos">Mais vendidos</option>
+        <option value="menor preco">Menor preço</option>
+        <option value="maior preco">Maior preço</option>
+        <option value="nome">Nome A-Z</option>
+      </select>
+    </label>
   </div>
   <div class="grid" id="grid"></div>
+  <div class="load-more-wrap" id="loadMoreWrap" style="display:none"><button class="btn-load" id="loadMoreBtn">Carregar mais 24 produtos ↓</button></div>
 
   <section id="como-funciona" style="margin-top:28px; background:#fff; border:1px solid var(--border); border-radius:22px; padding:20px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px">
     <div><b style="font-size:13px">1. Escolha a categoria</b><p style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5">Clique em Casa, Tech, Moda… a vitrine filtra na hora, sem recarregar.</p></div>
@@ -339,7 +392,7 @@ img{display:block;width:100%}
         </a>
       </div>
     </div>
-    <p style="font-size:10px; line-height:1.6; color:var(--muted)">Aviso: Este site contém links de afiliados. Podemos receber comissão por compras realizadas através deles, sem custo adicional para você. Preços e estoque sujeitos a alteração na loja oficial. Imagens ilustrativas — fotos reais serão atualizadas.</p>
+    <p style="font-size:10px; line-height:1.6; color:var(--muted)">Aviso de afiliado: somos afiliados Shopee. Ao clicar em “Ver oferta” você vai para a loja oficial; podemos receber comissão sem custo extra para você. Preços e estoque sujeitos a alteração na Shopee. | <a href="#" onclick="alert('Garimpo — divulgação de afiliado: este site participa do Programa de Afiliados Shopee. Preços conferidos em 31/08/2026.');return false" style="text-decoration:underline; color:var(--muted)">Divulgação</a> · <a href="#" onclick="alert('Privacidade: não coletamos dados pessoais além de analytics anônima. Contato: garimpo via Instagram/TikTok.');return false" style="text-decoration:underline; color:var(--muted)">Privacidade</a> · <a href="https://www.instagram.com/garimpo0132/" target="_blank" rel="noopener" style="text-decoration:underline; color:var(--muted)">Contato</a></p>
     <div class="footer-bottom">
       <p style="margin:0">© 2026 Garimpo — Produtos Virais Físicos · Todos os direitos reservados</p>
       <span style="font-size:11px; color:var(--muted); display:inline-flex; align-items:center; gap:6px"><span style="width:6px; height:6px; background:var(--gold); border-radius:50%; display:inline-block"></span> Siga no Instagram · TikTok · YouTube</span>
@@ -347,10 +400,10 @@ img{display:block;width:100%}
   </div>
 </footer>
 
+<button id="backToTop" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
 <script>
-// ===== PRODUTOS - carregado de produtos.json (fallback inline para preview local) =====
+// ===== GARIMPO - produtos.json + paginação + ordenação + highlight =====
 let PRODUTOS = [];
-
 const CATEGORIAS = [
   { id:"todos", label:"Todos" },
   { id:"casa", label:"Casa e Cozinha" },
@@ -362,13 +415,45 @@ const CATEGORIAS = [
   { id:"fitness", label:"Fitness" },
   { id:"natal", label:"🎄 Natal" },
 ];
-
 let filtroAtual = "todos";
 let buscaAtual = "";
+let ordenacao = "relevancia";
+let pagina = 1;
+const PAGE_SIZE = 24;
 
 function normaliza(s){ return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""); }
-
-function getFiltrados(){
+function escapeHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function escapeReg(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
+function highlight(text, query){
+  if(!query.trim()) return escapeHtml(text);
+  const termos = normaliza(query).split(/\s+/).filter(Boolean).map(escapeReg);
+  if(!termos.length) return escapeHtml(text);
+  let out = escapeHtml(text);
+  for(const t of termos){
+    try{
+      const re = new RegExp("("+t+")","gi");
+      out = out.replace(re, '<span class="hl">$1</span>');
+    }catch(e){}
+  }
+  return out;
+}
+function parsePreco(p){
+  if(!p) return 0;
+  const n = String(p).replace("R$","").replace(/\s/g,"").replace(".","").replace(",",".");
+  const v = parseFloat(n);
+  return isNaN(v)?0:v;
+}
+function parseSalesNum(s){
+  if(!s) return 0;
+  const t = String(s).toLowerCase().replace(/\s/g,'');
+  if(t.includes('mil')){
+    const n = parseFloat(t.replace('mil+','').replace('mil','').replace(',','.'))||0;
+    return Math.round(n*1000);
+  }
+  const n = parseInt(t.replace(/\D/g,''),10);
+  return isNaN(n)?0:n;
+}
+function getFiltradosOrdenados(){
   let lista = filtroAtual==="todos" ? [...PRODUTOS] : PRODUTOS.filter(p=>p.categoria===filtroAtual);
   const q = normaliza(buscaAtual.trim());
   if(q){
@@ -378,103 +463,163 @@ function getFiltrados(){
       return termos.every(t=> hay.includes(t));
     });
   }
+  if(ordenacao==="vendidos"){
+    lista.sort((a,b)=> parseSalesNum((b.rating.match(/\(([^)]+)\)/)||[])[1]||b.rating) - parseSalesNum((a.rating.match(/\(([^)]+)\)/)||[])[1]||a.rating));
+  } else if(ordenacao==="menor preco"){
+    lista.sort((a,b)=> parsePreco(a.preco) - parsePreco(b.preco));
+  } else if(ordenacao==="maior preco"){
+    lista.sort((a,b)=> parsePreco(b.preco) - parsePreco(a.preco));
+  } else if(ordenacao==="nome"){
+    lista.sort((a,b)=> normaliza(a.titulo).localeCompare(normaliza(b.titulo)));
+  }
   return lista;
 }
-
 function renderChips(){
   const bar = document.getElementById('filterBar');
   bar.innerHTML = CATEGORIAS.map(c=>{
     const count = c.id==="todos" ? PRODUTOS.length : PRODUTOS.filter(p=>p.categoria===c.id).length;
-    // esconde categoria vazia exceto todos
     if(count===0 && c.id!=="todos") return "";
-    return `<button class="chip ${filtroAtual===c.id?'active':''}" data-cat="${c.id}">${c.label} <span class="chip-count">${count}</span></button>`
+    const active = filtroAtual===c.id;
+    const extra = c.id==="natal" ? ' style="border-color:#C0392B; color:#C0392B"' : '';
+    const activeAttr = active ? ' aria-pressed="true"' : ' aria-pressed="false"';
+    return `<button class="chip ${active?'active':''}" data-cat="${c.id}"${activeAttr}${extra}>${c.label} <span class="chip-count">${count}</span></button>`
   }).join('');
   bar.querySelectorAll('.chip').forEach(el=>{
     el.addEventListener('click', ()=>{
       filtroAtual = el.dataset.cat;
+      pagina = 1;
       renderChips();
       renderGrid();
       document.getElementById('grid').scrollIntoView({behavior:'smooth', block:'start'});
     })
   })
+  requestAnimationFrame(()=>{
+    const hasOverflow = bar.scrollWidth > bar.clientWidth + 4;
+    bar.parentElement.classList.toggle('has-overflow', hasOverflow);
+  });
 }
-
 function renderGrid(){
   const grid = document.getElementById('grid');
-  const lista = getFiltrados();
+  const wrap = document.getElementById('loadMoreWrap');
+  const btn = document.getElementById('loadMoreBtn');
+  const lista = getFiltradosOrdenados();
   const totalCat = filtroAtual==="todos" ? PRODUTOS.length : PRODUTOS.filter(p=>p.categoria===filtroAtual).length;
   const hint = buscaAtual.trim() ? ` · busca: "${buscaAtual.trim()}"` : "";
   const labelCat = filtroAtual==="todos" ? "todas as categorias" : (CATEGORIAS.find(c=>c.id===filtroAtual)?.label || filtroAtual);
-  document.getElementById('resultCount').textContent = `${lista.length}/${totalCat} produtos · ${labelCat}${hint}`;
-
-  // atualiza dica de busca
+  const ordLabel = document.getElementById('sortSelect').selectedOptions[0]?.text || ordenacao;
+  document.getElementById('resultCount').textContent = `${lista.length}/${totalCat} produtos · ${labelCat}${hint} · ${ordLabel}`;
   const sh = document.getElementById('searchHint');
   if(buscaAtual.trim()){
-    sh.innerHTML = lista.length ? `Mostrando <b>${lista.length}</b> resultado(s) para <b>"${buscaAtual.trim()}"</b> em <b>${labelCat}</b>. <a href="#" id="limparHint" style="color:var(--gold-strong);text-decoration:underline">Limpar</a>` : `Nenhum resultado para <b>"${buscaAtual.trim()}"</b> em <b>${labelCat}</b>.`;
+    sh.innerHTML = lista.length ? `Mostrando <b>${lista.length}</b> resultado(s) para <b>"${escapeHtml(buscaAtual.trim())}"</b> em <b>${labelCat}</b>. <a href="#" id="limparHint" style="color:var(--gold-strong);text-decoration:underline">Limpar</a>` : `Nenhum resultado para <b>"${escapeHtml(buscaAtual.trim())}"</b> em <b>${labelCat}</b>.`;
     const lh = document.getElementById('limparHint');
     if(lh) lh.addEventListener('click', (e)=>{ e.preventDefault(); limparBusca(); });
   } else {
     sh.textContent = 'Dica: digite fone, panela, pet, jeans, mop... Combina com a categoria selecionada.';
   }
-
   const clearBtn = document.getElementById('clearSearch');
   if(buscaAtual.trim()) clearBtn.classList.add('show'); else clearBtn.classList.remove('show');
-
   if(lista.length===0){
-    const msgBusca = buscaAtual.trim() ? `para "<b>${buscaAtual.trim()}</b>" em <b>${labelCat}</b>` : `nessa categoria`;
+    const msgBusca = buscaAtual.trim() ? `para "<b>${escapeHtml(buscaAtual.trim())}</b>" em <b>${labelCat}</b>` : `nessa categoria`;
     grid.innerHTML = `<div class="empty">Nenhum produto ${msgBusca}.<br>Tente outra palavra-chave ou mude a categoria.<br><button onclick="limparBusca()" style="margin-top:10px; padding:8px 14px; border-radius:999px; border:1px solid var(--border); background:#fff; cursor:pointer">Limpar busca</button></div>`;
+    wrap.style.display="none";
     return;
   }
-
-  grid.innerHTML = lista.map(p=>`
+  const fim = pagina * PAGE_SIZE;
+  const visiveis = lista.slice(0, fim);
+  grid.innerHTML = visiveis.map(p=>{
+    const precoNum = parsePreco(p.preco);
+    const precoAntigo = p.precoAntigo || (precoNum>20 ? `R$ ${(precoNum*1.25).toFixed(2).replace('.',',')}` : "");
+    const alt = escapeHtml(p.titulo.slice(0,64));
+    const tituloHtml = highlight(p.titulo, buscaAtual);
+    const badgeClass = p.selo.includes('VIRAL')?'gold':(p.categoria==='natal'?'gold':'');
+    const badgeStyle = p.categoria==='natal' && !p.selo.includes('VIRAL') ? ' style="background:#C0392B; border-color:#A93226"' : '';
+    return `
     <article class="card" data-cat="${p.categoria}">
-      <a href="${p.link}" target="_blank" rel="nofollow sponsored noopener" class="card-media">
-        <img src="${p.img}" alt="${p.titulo}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&auto=format&fit=crop'">
-        <span class="badge ${p.selo.includes('VIRAL')?'gold':''}">${p.selo}</span>
-        <span class="store">${p.loja}</span>
+      <a href="${p.link}" target="_blank" rel="nofollow sponsored noopener" class="card-media" aria-label="${alt}">
+        <img src="${p.img}" alt="${alt}" loading="lazy" decoding="async" width="600" height="600" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&auto=format&fit=crop'">
+        <span class="badge ${badgeClass}"${badgeStyle}>${escapeHtml(p.selo)}</span>
+        <span class="store">${escapeHtml(p.loja)}</span>
       </a>
       <div class="card-body">
-        <h3 class="card-title">${p.titulo}</h3>
-        <div class="card-meta"><span class="stars">★ ${p.rating}</span> · <span>${p.loja}</span></div>
+        <h3 class="card-title">${tituloHtml}</h3>
+        <div class="card-meta"><span class="stars">★ ${escapeHtml(p.rating)}</span> · <span>${escapeHtml(p.loja)}</span></div>
         <div class="divider"></div>
         <div class="price-row">
-          <span class="price">${p.preco} ${p.precoAntigo ? `<small style="text-decoration:line-through">${p.precoAntigo}</small>`:''}</span>
+          <span class="price">${escapeHtml(p.preco)} ${precoAntigo ? `<small style="text-decoration:line-through; opacity:0.6">${escapeHtml(precoAntigo)}</small>`:''}</span>
           <span style="font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">frete na loja</span>
         </div>
-        <a href="${p.link}" target="_blank" rel="nofollow sponsored noopener" class="btn-card">Ver oferta na ${p.loja} →</a>
+        <a href="${p.link}" target="_blank" rel="nofollow sponsored noopener" class="btn-card">Ver oferta na ${escapeHtml(p.loja)} →</a>
       </div>
     </article>
-  `).join('');
+  `}).join('');
+  if(visiveis.length < lista.length){
+    wrap.style.display="flex";
+    btn.textContent = `Carregar mais ${Math.min(PAGE_SIZE, lista.length - visiveis.length)} produtos ↓ (${visiveis.length}/${lista.length})`;
+    btn.disabled=false;
+  } else {
+    wrap.style.display = lista.length > PAGE_SIZE ? "flex" : "none";
+    if(lista.length > PAGE_SIZE){
+      btn.textContent = `Todos os ${lista.length} carregados ✓`;
+      btn.disabled=true;
+    } else {
+      wrap.style.display="none";
+    }
+  }
+  try{
+    const ld = document.getElementById('ld-itemlist');
+    if(ld){
+      const items = visiveis.slice(0,12).map((p,i)=>({"@type":"ListItem","position":i+1,"url":p.link,"name":p.titulo}));
+      ld.textContent = JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":"Produtos Virais Garimpo","numberOfItems": lista.length, "itemListElement": items});
+    }
+  }catch(e){}
 }
-
 function limparBusca(){
   buscaAtual = "";
   document.getElementById('searchInput').value = "";
   document.getElementById('clearSearch').classList.remove('show');
+  pagina = 1;
   renderGrid();
 }
-
-// reveal
 const io = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') })
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// search listeners
 const searchInput = document.getElementById('searchInput');
 const clearSearch = document.getElementById('clearSearch');
+const sortSelect = document.getElementById('sortSelect');
 let t=null;
 searchInput.addEventListener('input', (e)=>{
   buscaAtual = e.target.value;
+  pagina = 1;
   clearTimeout(t);
-  t=setTimeout(()=> renderGrid(), 180);
+  t=setTimeout(()=> renderGrid(), 160);
 });
 searchInput.addEventListener('keydown', (e)=>{
   if(e.key==='Escape'){ limparBusca(); }
 });
 clearSearch.addEventListener('click', limparBusca);
-
-// tenta carregar produtos.json externo (fonte da verdade)
+sortSelect.addEventListener('change', (e)=>{
+  ordenacao = e.target.value;
+  pagina = 1;
+  renderGrid();
+});
+document.getElementById('loadMoreBtn').addEventListener('click', ()=>{
+  pagina++;
+  renderGrid();
+  document.getElementById('loadMoreWrap').scrollIntoView({behavior:'smooth', block:'center'});
+});
+const backToTop = document.getElementById('backToTop');
+const filterBar = document.querySelector('.filter-bar');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 800) backToTop.classList.add('show'); else backToTop.classList.remove('show');
+  if(filterBar) filterBar.classList.toggle('scrolled', window.scrollY > 120);
+}, {passive:true});
+backToTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+document.getElementById('filterBar').addEventListener('scroll', ()=>{
+  const bar=document.getElementById('filterBar');
+  const atEnd = bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 8;
+  bar.parentElement.classList.toggle('has-overflow', !atEnd);
+});
 function parseSalesNum(s){
   if(!s) return 0;
   const t = String(s).toLowerCase().replace(/\s/g,'');
@@ -493,15 +638,12 @@ function atualizarHero(){
     const cats = new Set(PRODUTOS.map(p=>p.categoria));
     hcats.textContent = cats.size;
   }
-  // destaque do dia: pega um 🔥 VIRAL com maior volume, senão MAIS VENDIDO, senão primeiro
   if(!PRODUTOS.length) return;
   let pool = PRODUTOS.filter(p=> String(p.selo||'').includes('VIRAL'));
   if(!pool.length) pool = PRODUTOS.filter(p=> String(p.selo).includes('MAIS VENDIDO'));
   if(!pool.length) pool = PRODUTOS;
-  // ordena por vendas decrescente (extrai de rating "4.8 (100mil+)" ou  "4.8 (1mil+)" )
   pool.sort((a,b)=> parseSalesNum((a.rating.match(/\(([^)]+)\)/)||[])[1]||a.rating) - parseSalesNum((b.rating.match(/\(([^)]+)\)/)||[])[1]||b.rating));
   pool.reverse();
-  // pega topo mas alterna por dia para variar (dia do mês % pool.length)
   const idx = (new Date().getDate()) % pool.length;
   const p = pool[idx] || pool[0];
   const link=document.getElementById('heroCardLink');
@@ -510,7 +652,7 @@ function atualizarHero(){
   const sub=document.getElementById('heroCardSub');
   const badge=document.getElementById('heroCardBadge');
   if(link) link.href = p.link;
-  if(img){ img.src = p.img; img.alt = p.titulo; }
+  if(img){ img.src = p.img; img.alt = p.titulo.slice(0,64); }
   if(title) title.textContent = p.titulo.length>44 ? p.titulo.slice(0,44)+'…' : p.titulo;
   if(sub) sub.textContent = `${p.preco} · ${p.rating} · ${p.selo.trim()}`;
   if(badge){ badge.textContent = p.selo.trim(); badge.className = ''; badge.style.cssText = p.selo.includes('VIRAL') ? 'background:var(--gold); color:#fff; padding:6px 10px; border-radius:999px; font-weight:700; font-size:11px; border:1px solid var(--gold)' : 'background:var(--gold-soft); color:var(--gold-strong); padding:6px 10px; border-radius:999px; font-weight:700; font-size:11px; border:1px solid #EDE3C8'; }
@@ -520,23 +662,20 @@ fetch('./produtos.json').then(r=>r.ok?r.json():null).then(data=>{
     PRODUTOS = data;
     renderChips(); renderGrid(); atualizarHero();
   } else {
-    // fallback: se falhar, mantém vazio e mostra erro
     document.getElementById('resultCount').textContent = 'Nenhum produto carregado';
   }
 }).catch(()=>{
   document.getElementById('resultCount').textContent = 'Erro ao carregar produtos.json';
 });
-
-// fallback inline caso fetch falhe por file:// - injeta os 32 direto se PRODUTOS ainda vazio após 1s
 setTimeout(()=>{
   if(PRODUTOS.length===0){
     fetch('./produtos.json').then(r=>r.json()).then(d=>{ if(d.length){ PRODUTOS=d; renderChips(); renderGrid(); atualizarHero(); } }).catch(()=>{});
   }
 }, 900);
-
 renderChips();
 renderGrid();
 atualizarHero();
+
 </script>
 </body>
 </html>
